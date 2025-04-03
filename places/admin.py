@@ -1,3 +1,11 @@
 from django.contrib import admin
+from places.models import Place, Image
 
-# Register your models here.
+
+@admin.register(Place)
+class PlaceAdmin(admin.ModelAdmin):
+  pass
+
+@admin.register(Image)
+class ImageAdmin(admin.ModelAdmin):
+  pass
