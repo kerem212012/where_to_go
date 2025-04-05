@@ -1,4 +1,4 @@
-from audioop import reverse
+from django.urls import reverse
 
 from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404
@@ -21,7 +21,7 @@ def index(request):
             "properties": {
                 "title": place.title,
                 "placeId": place.id,
-                "detailsUrl": "" #reverse('place_details', kwargs={'place_id': place.id})
+                "detailsUrl": reverse('place_details', kwargs={'place_id': place.id})
             }
         }
         )
@@ -34,7 +34,7 @@ def get_place_details(request,place_id):
     place = get_object_or_404(Place,pk=place_id)
     place_details = {
         "title" : place.title,
-        "images" : [image.image.url for image in place.image.all()],
+        "imgs" : [image.image.url for image in place.image.all()],
         "description_short" : place.description_short,
         "description_long" : place.description_long,
         "coordinates" : {
