@@ -1,6 +1,6 @@
 from audioop import reverse
 
-from django.http import HttpResponse
+from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404
 
 from places.models import Place
@@ -32,4 +32,14 @@ def index(request):
 
 def get_place_details(request,place_id):
     place = get_object_or_404(Place,pk=place_id)
-    return HttpResponse(place.title)
+    place_details = {
+        "title" : place.title,
+        "images" : [image.image.url for image in place.image.all()],
+        "description_short" : place.description_short,
+        "description_long" : place.description_long,
+        "coordinates" : {
+            "lng": place.lng,
+            "lat" : place.lat,
+        }
+    }
+    return JsonResponse(place_details,json_dumps_params={'ensure_ascii': False, 'indent': 4})
