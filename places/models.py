@@ -14,7 +14,6 @@ class Place(models.Model):
 
 class Image(models.Model):
     image = models.ImageField(verbose_name="картинка")
-    pos = models.PositiveIntegerField(verbose_name="позиция",db_index=True,default=0,blank=True)
     place = models.ForeignKey(
         Place,
         on_delete=models.CASCADE,
@@ -24,6 +23,3 @@ class Image(models.Model):
         null=True
 
     )
-
-    def __str__(self):
-        return f"{self.pos}"

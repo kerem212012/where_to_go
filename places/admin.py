@@ -1,6 +1,8 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 
+from adminsortable2.admin import SortableAdminBase
+
 from places.models import Place, Image
 
 IMAGE_HEIGHT = 200
@@ -13,7 +15,7 @@ class ImageInline(admin.TabularInline):
         return mark_safe(f"<img src='{image.image.url}' width='{IMAGE_WIDTH}' height= '{IMAGE_HEIGHT}'>")
 
 @admin.register(Image)
-class ImageAdmin(admin.ModelAdmin):
+class ImageAdmin(SortableAdminBase,admin.ModelAdmin):
     raw_id_fields = ("place",)
 
 @admin.register(Place)
