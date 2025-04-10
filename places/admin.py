@@ -1,11 +1,18 @@
 from django.contrib import admin
+
 from places.models import Place, Image
 
 
-@admin.register(Place)
-class PlaceAdmin(admin.ModelAdmin):
-  pass
+class ImageInline(admin.TabularInline):
+    model = Image
+
 
 @admin.register(Image)
 class ImageAdmin(admin.ModelAdmin):
-  pass
+    raw_id_fields = ("place",)
+
+@admin.register(Place)
+class PlaceAdmin(admin.ModelAdmin):
+    inlines = [
+        ImageInline,
+    ]
