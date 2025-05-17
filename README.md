@@ -1,46 +1,20 @@
-# Куда пойти — Москва глазами Артёма
-
-Фронтенд для будущего сайта о самых интересных местах в Москве. Авторский проект Артёма.
-
-![&#x41A;&#x443;&#x434;&#x430; &#x43F;&#x43E;&#x439;&#x442;&#x438;](.gitbook/assets/site.png)
-
-[Демка сайта](https://devmanorg.github.io/where-to-go-frontend/).
-
-## Как запустить
-
-* Скачайте код
-* Перейдите в каталог проекта с файлом `index.html`
-* Запустите веб-сервер
-* Откройте в браузере
-
-В качестве веб-сервера можно использовать что угодно. Например, подойдёт даже самый простой встроенный в Python веб-сервер:
-
-```bash
-$ python -m http.server 8000
+# WHERE TO GO
+### How Need?
+You don't know where you can go here with this map you can read descriptions about some places.
+### How Run?
+Play this code:
+```pip install -r requirements.txt```
+create file ```.env```
+and write :
+```python
+SECRET_KEY = secretkey
+ALLOWED_HOSTS = ["*",]
+DEBUG = True
+```
+then play server:
+```python
+python manage.py runserver
 ```
 
-## Настройки
-
-Внизу справа на странице можно включить отладочный режим логгирования.
-
-![debug mode](.gitbook/assets/debug-option.png)
-
-Настройки сохраняются в Local Storage браузера и не пропадают после обновления страницы. Чтобы сбросить настройки, удалите ключи из Local Storage с помощью Chrome Dev Tools —&gt; Вкладка Application —&gt; Local Storage.
-
-Если что-то работает не так, как ожидалось, то начните с включения отладочного режима логгирования.
-
-
-
-## Используемые библиотеки
-
-* [Leaflet](https://leafletjs.com/) — отрисовка карты
-* [loglevel](https://www.npmjs.com/package/loglevel) для логгирования
-* [Bootstrap](https://getbootstrap.com/) — CSS библиотека
-* [Vue.js](https://ru.vuejs.org/) — реактивные шаблоны на фронтенде
-
-## Цели проекта
-
-Код написан в учебных целях — это урок в курсе по Python и веб-разработке на сайте [Devman](https://dvmn.org).
-
-Тестовые данные взяты с сайта [KudaGo](https://kudago.com).
-
+### PLS SUB
+[Chipsinka](https://www.youtube.com/@Cipsinkagame/featured)
